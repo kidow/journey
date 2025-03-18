@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
+import { cn } from 'services'
 
 import './globals.css'
 
@@ -22,7 +23,7 @@ export default function RootLayout({ children }: ReactProps) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={cn(geistSans.variable, geistMono.variable, 'antialiased')}
       >
         {children}
       </body>
