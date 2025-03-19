@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import { cn } from 'services'
 
+import Spotify from './_spotify'
 import './globals.css'
 
 const geistSans = Geist({
@@ -26,6 +27,7 @@ export default function RootLayout({ children }: ReactProps) {
         className={cn(geistSans.variable, geistMono.variable, 'antialiased')}
       >
         {children}
+        {/* <Spotify /> */}
       </body>
     </html>
   )
