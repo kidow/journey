@@ -1,5 +1,6 @@
 'use client'
 
+import { TextEffect } from 'components'
 import { motion } from 'motion/react'
 import type { Transition, Variants } from 'motion/react'
 
@@ -17,9 +18,15 @@ export default function Page(): React.ReactElement {
     <>
       <header className="mb-8">
         <h1 className="text-black font-medium dark:text-white">Dongwook Kim</h1>
-        <span className="text-zinc-600 dark:text-zinc-500">
+        <TextEffect
+          as="p"
+          preset="fade"
+          per="char"
+          className="text-zinc-600 dark:text-zinc-500"
+          delay={0.5}
+        >
           Web Frontend Engineer
-        </span>
+        </TextEffect>
       </header>
 
       <motion.main
@@ -36,12 +43,12 @@ export default function Page(): React.ReactElement {
         initial="hidden"
         animate="visible"
       >
-        <section>
+        <motion.section>
           <p className="text-zinc-600 dark:text-zinc-400">
             Committed to profitable outcomes, while simultaneously passionate
             about crafting exceptional UI.
           </p>
-        </section>
+        </motion.section>
 
         <motion.section
           variants={VARIANTS_SECTION}
