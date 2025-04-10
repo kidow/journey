@@ -17,7 +17,7 @@ export default function Theme(): React.ReactElement {
     <button
       onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
       className="rounded-md p-2 fixed top-2 right-2"
-      aria-label="테마 변경"
+      aria-label="Change theme"
     >
       {theme === 'dark' ? <Moon size={20} /> : <Sun size={20} />}
     </button>
