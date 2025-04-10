@@ -4,6 +4,8 @@ import { TextEffect } from 'components'
 import { motion } from 'motion/react'
 import type { Transition, Variants } from 'motion/react'
 
+import Spotify from './spotify'
+
 const VARIANTS_SECTION: Variants = {
   hidden: { opacity: 0, y: 20, filter: 'blur(8px)' },
   visible: { opacity: 1, y: 0, filter: 'blur(0px)' }
@@ -29,6 +31,8 @@ export default function Page(): React.ReactElement {
         </TextEffect>
       </header>
 
+      <Spotify />
+
       <motion.main
         variants={{
           hidden: { opacity: 0 },
@@ -46,7 +50,7 @@ export default function Page(): React.ReactElement {
         <motion.section>
           <p className="text-zinc-600 dark:text-zinc-400">
             Committed to profitable outcomes, while simultaneously passionate
-            about crafting exceptional UI.
+            about crafting beautiful UI.
           </p>
         </motion.section>
 
