@@ -1,8 +1,17 @@
 @import 'tailwindcss';
+@plugin '@tailwindcss/typography';
 @custom-variant dark (&:is(.dark *));
 
 @layer base {
   button {
     @apply cursor-pointer;
   }
+}
+
+#nprogress .bar {
+  background: var(--color-zinc-300) !important;
+}
+
+.dark #nprogress .bar {
+  background: var(--color-zinc-700) !important;
 }
