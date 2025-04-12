@@ -1,6 +1,7 @@
 'use client'
 
 import type { Editor } from '@tiptap/core'
+import Placeholder from '@tiptap/extension-placeholder'
 import { EditorContent, useEditor } from '@tiptap/react'
 import type { Content } from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
@@ -8,6 +9,8 @@ import { Header } from 'components'
 import { useEffect, useState } from 'react'
 import { useCopyToClipboard, useLocalStorage } from 'services'
 import { useDebouncedCallback } from 'use-debounce'
+
+import './editor.css'
 
 const INITIAL_CONTENT: Content = {
   type: 'doc',
@@ -32,10 +35,13 @@ export default function Client(): React.ReactElement {
   }, 750)
 
   const editor = useEditor({
-    extensions: [StarterKit],
+    extensions: [
+      StarterKit,
+      Placeholder.configure({ placeholder: 'Type anything...' })
+    ],
     editorProps: {
       attributes: {
-        class: 'focus:outline-none'
+        class: 'focus:outline-none placeholder:italic'
       }
     },
     onCreate: ({ editor }) => {
