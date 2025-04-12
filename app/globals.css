@@ -1,16 +1,7 @@
 @import 'tailwindcss';
-@plugin '@tailwindcss/typography';
 @custom-variant dark (&:is(.dark *));
 
 @layer base {
-  *,
-  ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    border-color: var(--color-gray-200, currentColor);
-  }
-
   button {
     @apply cursor-pointer;
   }

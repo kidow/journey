@@ -48,7 +48,7 @@ export default function RootLayout({ children }: ReactProps) {
           storageKey="theme"
           defaultTheme="system"
         >
-          <NextTopLoader color="#93c5fd" height={8} />
+          <NextTopLoader color="#94a3b8" height={4} />
           {children}
           <Theme />
           <Toaster />

@@ -41,8 +41,7 @@ export function useLocalStorage<T>(
       const content = JSON.parse(decodeURIComponent(atob(c)))
       setStoredValue(content)
     } else if (!!item) {
-      console.log('item', item)
-      //   setStoredValue(JSON.parse(item))
+      setStoredValue(JSON.parse(item))
     }
   }, [key, searchParams])
 

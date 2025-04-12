@@ -33,9 +33,9 @@ function Header({ title, description }: Props): React.ReactElement {
       <AnimatePresence>
         {pathname !== '/' && (
           <motion.button
-            initial={{ opacity: 0, x: -10 }}
+            initial={{ opacity: 0, x: 10 }}
             animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: 10 }}
+            exit={{ opacity: 0, x: -10 }}
             transition={{ duration: 0.3 }}
             onClick={() => {
               const currentDomain = window.location.hostname
@@ -49,9 +49,8 @@ function Header({ title, description }: Props): React.ReactElement {
                 back()
               }
             }}
-            className="hover:-translate-x-1 duration-150"
           >
-            <ArrowLeftIcon className="size-6 text-zinc-600 dark:text-zinc-500" />
+            <ArrowLeftIcon className="size-6 hover:-translate-x-1 duration-150 text-zinc-600 dark:text-zinc-500 hover:text-zinc-700 dark:hover:text-zinc-400" />
           </motion.button>
         )}
       </AnimatePresence>
