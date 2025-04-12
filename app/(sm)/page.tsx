@@ -1,8 +1,9 @@
 'use client'
 
-import { TextEffect } from 'components'
+import { Header, TextEffect } from 'components'
 import { motion } from 'motion/react'
 import type { Transition, Variants } from 'motion/react'
+import Link from 'next/link'
 
 import Spotify from './spotify'
 
@@ -18,20 +19,9 @@ const TRANSITION_SECTION: Transition = {
 export default function Page(): React.ReactElement {
   return (
     <>
-      <header className="mb-8">
-        <h1 className="text-black font-medium dark:text-white">Dongwook Kim</h1>
-        <TextEffect
-          as="p"
-          preset="fade"
-          per="char"
-          className="text-zinc-600 dark:text-zinc-500"
-          delay={0.5}
-        >
-          Web Frontend Engineer
-        </TextEffect>
-      </header>
+      <Header title="Dongwook Kim" description="Web Frontend Engineer" />
 
-      <Spotify />
+      {/* <Spotify /> */}
 
       <motion.main
         variants={{
@@ -59,6 +49,20 @@ export default function Page(): React.ReactElement {
           transition={TRANSITION_SECTION}
         >
           <h3 className="mb-3 text-lg font-medium">Projects</h3>
+        </motion.section>
+
+        <motion.section
+          variants={VARIANTS_SECTION}
+          transition={TRANSITION_SECTION}
+        >
+          <h3 className="mb-3 text-lg font-medium">Toys</h3>
+          <ul>
+            <li>
+              <Link href="/memo" className="underline dark:text-zinc-300">
+                Memo
+              </Link>
+            </li>
+          </ul>
         </motion.section>
 
         <motion.section

@@ -15,9 +15,8 @@ export default function Spotify(): React.ReactElement {
             <Icon.Spotify className="w-6 h-6" />
           </motion.button>
         </MorphingPopover.Trigger>
-        <MorphingPopover.Content className="p-0 w-150">
+        <MorphingPopover.Content className="p-0 w-150 rounded-xl">
           <iframe
-            className="rounded-lg"
             src="https://open.spotify.com/embed/playlist/1SQNwBHKe8bk7VDLX6HOdK?utm_source=generator"
             width="100%"
             height="152"

@@ -1,10 +1,12 @@
 import type { Metadata, Viewport } from 'next'
 import { ThemeProvider } from 'next-themes'
 import { Geist, Geist_Mono } from 'next/font/google'
+import NextTopLoader from 'nextjs-toploader'
 import { cn } from 'services'
 
 import './globals.css'
 import Theme from './theme'
+import Toaster from './toaster'
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -46,8 +48,10 @@ export default function RootLayout({ children }: ReactProps) {
           storageKey="theme"
           defaultTheme="system"
         >
+          <NextTopLoader color="#93c5fd" height={8} />
           {children}
           <Theme />
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>
