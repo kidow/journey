@@ -41,7 +41,7 @@ export default function Client(): React.ReactElement {
     ],
     editorProps: {
       attributes: {
-        class: 'focus:outline-none placeholder:italic'
+        class: 'prose dark:prose-invert focus:outline-none placeholder:italic'
       }
     },
     onCreate: ({ editor }) => {
