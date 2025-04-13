@@ -87,6 +87,7 @@ export default function Client(): React.ReactElement {
           <button
             onClick={onShareLink}
             className="rounded-lg ring px-2 py-1 dark:ring-zinc-700 dark:text-zinc-400"
+            aria-label="Share link"
           >
             Share link
           </button>
@@ -96,6 +97,7 @@ export default function Client(): React.ReactElement {
               setContent(INITIAL_CONTENT)
             }}
             className="rounded-lg ring px-2 py-1 dark:ring-zinc-700 dark:text-zinc-400"
+            aria-label="Clear content"
           >
             Clear
           </button>

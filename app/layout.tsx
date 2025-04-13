@@ -52,6 +52,9 @@ export default function RootLayout({ children }: ReactProps) {
           {children}
           <Theme />
           <Toaster />
+          <div className="fixed inset-0 z-10 pointer-events-none">
+            <div className="size-full bg-size-[128px] bg-repeat opacity-[0.06] bg-[url(/noise.png)]" />
+          </div>
         </ThemeProvider>
       </body>
     </html>
