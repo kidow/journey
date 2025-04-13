@@ -101,7 +101,7 @@ export default function Item({
                 ...list.slice(index + 1)
               ])
             }
-            className="invisible group-hover:visible"
+            className="invisible group-hover:visible pr-2"
           >
             <PencilIcon size={14} />
           </button>
@@ -128,7 +128,7 @@ export default function Item({
           <div className="flex items-center gap-1">
             <button
               type="submit"
-              className="px-4 py-2 rounded-md bg-blue-500 text-white"
+              className="px-3.5 py-1.5 rounded-md bg-blue-500 text-white"
             >
               Add card
             </button>
