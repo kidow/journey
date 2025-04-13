@@ -12,7 +12,16 @@ export default function Client(): React.ReactElement {
   const { list, setList } = useKanbanStore()
 
   useEffect(() => {
-    setList([{ id: randomString(), title: 'Sample 1', cardList: [] }])
+    const kanban = window.localStorage.getItem('kanban')
+    setList(
+      kanban
+        ? JSON.parse(kanban)
+        : [
+            { id: randomString(), title: 'Todo', cardList: [] },
+            { id: randomString(), title: 'In Progress', cardList: [] },
+            { id: randomString(), title: 'Done', cardList: [] }
+          ]
+    )
     document.body.classList.add('overflow-x-auto')
     return () => {
       document.body.classList.remove('overflow-x-auto')
@@ -37,6 +46,7 @@ export default function Client(): React.ReactElement {
               title={item.title}
               cardList={item.cardList}
               index={key}
+              isEdit={item.isEdit}
             />
           ))}
           <div

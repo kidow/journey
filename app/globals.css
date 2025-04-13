@@ -6,6 +6,10 @@
   button {
     @apply cursor-pointer;
   }
+  input,
+  textarea {
+    @apply ring-2 ring-transparent outline-none placeholder:italic focus:ring-blue-500;
+  }
 }
 
 #nprogress .bar {

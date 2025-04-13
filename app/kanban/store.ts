@@ -1,10 +1,10 @@
 import { create } from 'zustand'
 
-type Card = string
 interface Item {
   id: string
   title: string
-  cardList: Card[]
+  cardList: Array<{ name: string }>
+  isEdit?: boolean
 }
 
 interface KanbanStore {
