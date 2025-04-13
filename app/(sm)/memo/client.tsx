@@ -6,6 +6,7 @@ import { EditorContent, useEditor } from '@tiptap/react'
 import type { Content } from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
 import { Header } from 'components'
+import { motion } from 'motion/react'
 import { useEffect, useState } from 'react'
 import { useCopyToClipboard, useLocalStorage } from 'services'
 import { useDebouncedCallback } from 'use-debounce'
@@ -72,7 +73,12 @@ export default function Client(): React.ReactElement {
         title="Memo"
         description="The content is stored in the local storage"
       />
-      <div className="min-h-96 pb-80">
+      <motion.div
+        className="min-h-96 pb-80"
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3, delay: 0.3 }}
+      >
         <EditorContent editor={editor} spellCheck={false} />
         <div className="mt-4 flex items-center gap-2 text-sm">
           <span className="rounded-lg bg-zinc-100 px-2 py-1 text-zinc-400 dark:bg-zinc-800 dark:text-zinc-500">
@@ -94,7 +100,7 @@ export default function Client(): React.ReactElement {
             Clear
           </button>
         </div>
-      </div>
+      </motion.div>
     </>
   )
 }

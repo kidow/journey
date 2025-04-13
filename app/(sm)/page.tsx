@@ -56,10 +56,15 @@ export default function Page(): React.ReactElement {
           transition={TRANSITION_SECTION}
         >
           <h3 className="mb-3 text-lg font-medium">Toys</h3>
-          <ul>
+          <ul className="space-y-2">
             <li>
               <Link href="/memo" className="underline dark:text-zinc-300">
                 Memo
+              </Link>
+            </li>
+            <li>
+              <Link href="/kanban" className="underline dark:text-zinc-300">
+                Kanban
               </Link>
             </li>
           </ul>
