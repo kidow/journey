@@ -8,7 +8,12 @@
   }
   input,
   textarea {
-    @apply ring-2 ring-transparent outline-none placeholder:italic focus:ring-blue-500;
+    @apply ring-2 ring-transparent placeholder:italic focus:ring-blue-500;
+  }
+  input,
+  textarea,
+  button {
+    @apply outline-none;
   }
 }
 
