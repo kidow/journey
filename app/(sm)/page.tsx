@@ -1,20 +1,10 @@
 'use client'
 
-import { Disclosure, Header } from 'components'
+import { Disclosure, Header, Stagger } from 'components'
 import { motion } from 'motion/react'
-import type { Transition, Variants } from 'motion/react'
 import Link from 'next/link'
 
 import Spotify from './spotify'
-
-const VARIANTS: Variants = {
-  hidden: { opacity: 0, y: 20, filter: 'blur(8px)' },
-  visible: { opacity: 1, y: 0, filter: 'blur(0px)' }
-}
-
-const TRANSITION: Transition = {
-  duration: 0.3
-}
 
 const CAREERS: Array<{
   title: string
@@ -49,20 +39,7 @@ export default function Page(): React.ReactElement {
 
       {/* <Spotify /> */}
 
-      <motion.main
-        variants={{
-          hidden: { opacity: 0 },
-          visible: {
-            opacity: 1,
-            transition: {
-              staggerChildren: 0.15
-            }
-          }
-        }}
-        className="space-y-24"
-        initial="hidden"
-        animate="visible"
-      >
+      <Stagger>
         <motion.section>
           <p className="text-zinc-600 dark:text-zinc-400">
             Committed to profitable outcomes, while simultaneously passionate
@@ -70,12 +47,12 @@ export default function Page(): React.ReactElement {
           </p>
         </motion.section>
 
-        <motion.section variants={VARIANTS} transition={TRANSITION}>
-          <h3 className="mb-3 text-lg font-medium">Projects</h3>
-        </motion.section>
+        <Stagger.Section>
+          <Stagger.Title name="Projects" />
+        </Stagger.Section>
 
-        <motion.section variants={VARIANTS} transition={TRANSITION}>
-          <h3 className="mb-3 text-lg font-medium">Toys</h3>
+        <Stagger.Section>
+          <Stagger.Title name="Toys" />
           <ul className="space-y-2">
             <li>
               <Link href="/memo" className="underline dark:text-zinc-300">
@@ -88,14 +65,14 @@ export default function Page(): React.ReactElement {
               </Link>
             </li>
           </ul>
-        </motion.section>
+        </Stagger.Section>
 
-        <motion.section variants={VARIANTS} transition={TRANSITION}>
-          <h3 className="mb-3 text-lg font-medium">Games</h3>
-        </motion.section>
+        <Stagger.Section>
+          <Stagger.Title name="Games" />
+        </Stagger.Section>
 
-        <motion.section variants={VARIANTS} transition={TRANSITION}>
-          <h3 className="mb-3 text-lg font-medium">Careers</h3>
+        <Stagger.Section>
+          <Stagger.Title name="Careers" />
           <div className="space-y-2">
             {CAREERS.map((item, key) => (
               <Disclosure
@@ -121,14 +98,14 @@ export default function Page(): React.ReactElement {
               </Disclosure>
             ))}
           </div>
-        </motion.section>
+        </Stagger.Section>
 
-        <motion.section variants={VARIANTS} transition={TRANSITION}>
-          <h3 className="mb-3 text-lg font-medium">Blog</h3>
-        </motion.section>
+        <Stagger.Section>
+          <Stagger.Title name="Blog" />
+        </Stagger.Section>
 
-        <motion.section variants={VARIANTS} transition={TRANSITION}>
-          <h3 className="mb-3 text-lg font-medium">Connect</h3>
+        <Stagger.Section>
+          <Stagger.Title name="Connect" />
           <p className="mb-5 text-zinc-600 dark:text-zinc-400">
             Feel free to contact me at{' '}
             <a
@@ -138,8 +115,8 @@ export default function Page(): React.ReactElement {
               wcgo2ling@gmail.com
             </a>
           </p>
-        </motion.section>
-      </motion.main>
+        </Stagger.Section>
+      </Stagger>
 
       <footer className="mt-24 py-4 border-t border-zinc-100 dark:border-zinc-800">
         <span className="text-xs text-zinc-500">© 2025 Dongwook Kim</span>

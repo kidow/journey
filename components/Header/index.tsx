@@ -3,6 +3,7 @@
 import { TextEffect } from 'components'
 import { ArrowLeftIcon } from 'lucide-react'
 import { AnimatePresence, motion } from 'motion/react'
+import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useRouter } from 'nextjs-toploader/app'
 import { memo } from 'react'
@@ -57,6 +58,14 @@ function Header({ title, description }: Props): React.ReactElement {
           </motion.button>
         )}
       </AnimatePresence>
+      {pathname === '/' && (
+        <Link
+          href="/about"
+          className="text-sm text-zinc-500 dark:text-zinc-400"
+        >
+          About
+        </Link>
+      )}
     </header>
   )
 }
